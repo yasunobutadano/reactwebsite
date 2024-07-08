@@ -1,0 +1,288 @@
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .hero-section {
+    height: 60vh;
+    background: url('/path/to/background-image.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  
+  .main-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .hero-section {
+    height: 60vh;
+    background: url('/path/to/background-image.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  .dow-equal-height {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    
+
+  }
+  .card-equal-height{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch; /* 子要素の高さを均等にします */
+
+  }
+  
+  /* .about-us-section {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    
+    
+  } */
+  
+  .about-us-card {
+    background-color: #343a40;
+    color: #ffffff;
+    border-radius: 8px;
+   
+    flex: 1; /* 子要素の高さを親の高さに合わせます */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 上下に均等なスペースを確保します */
+
+
+    
+  }
+  
+  .about-us-card .icon img {
+    max-width: 50px;
+  }
+  
+  .view-more {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .view-more:hover {
+    text-decoration: underline;
+  }
+  
+
+  .recruit-section {
+    position: relative;
+    height: 60vh; /* Adjust the height as needed */
+    overflow: hidden; /* To ensure pseudo-elements don't overflow */
+  }
+  
+  .recruit-section::before {
+    content: '';
+    position: absolute;
+    top: 10%; /* Adjust as needed */
+    left: 10%;
+    width: 80%; /* Adjust as needed */
+    height: 80%; /* Adjust as needed */
+    background: url('https://www.miraic.jp/wp-content/uploads/2021/09/AdobeStock_449522684_s.jpg') no-repeat center center;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+  }
+  
+  .gradient-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50px); /* Initial position */
+    width: 75%;
+    height: 50%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    z-index: 2;
+  }
+
+
+ 
+  .gradient-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100px); /* Initial position */
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    clip-path: polygon(100% 0%, 0% 0%, 100% 100%);
+    z-index: 2;
+  }
+
+  .gradient-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(50px); /* Initial position */
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+    z-index: 2;
+  }
+  
+
+  
+  .recruit-content {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 20%;
+    /* transform: translate(-50%, -50%); */
+    color: #fff;
+    text-align: left;
+  }
+  
+  .recruit-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .recruit-content p {
+    font-size: 1.25rem;
+  }
+  
+
+
+ 
+.c-loader-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+ 
+
+
+ 
+.c-loader-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: start;
+  pointer-events: none;
+}
+ 
+.c-loader-dot > span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+ 
+.c-loader-dot > span + span {
+  margin-left: 3rem;
+}
+
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 0 auto; /* 横方向の中央揃え */
+
+
+  }
+
+.company-section {
+    padding: 60px 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch; /* 子要素の高さを均等にします */
+  }
+  
+  .company-section h2 {
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  
+  .row-equal-height .company-stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch; /* 子要素の高さを均等にします */
+    background: url('https://images.ctfassets.net/pdf29us7flmy/2fyYpRZW9q3tmVmbE5y6to/3e5e42ed188c4f34fee8261031f58e13/_____________________.jpeg?w=720&q=100&fm=jpg') no-repeat;
+    background-size:  400% 300%; /* 6カラム全体で1つの画像を表示するためにサイズを調整 */
+    padding-right: 15px;
+    padding-bottom: 15px;
+    background-clip: content-box; /* 背景がパディングに影響されないように */
+
+  }
+  .company-stat:nth-child(3n) {
+    margin-right: 0; /* 各行の最後のカラムのマージンをリセット */
+  }
+   .company-stat:nth-child(1) {
+    background-position: 0% 0%;
+  }
+  
+  .company-stat:nth-child(2) {
+    background-position: 50% 0%;
+  }
+  
+  .company-stat:nth-child(3) {
+    background-position: 100% 0%;
+  }
+  
+  .company-stat:nth-child(4) {
+    background-position: 0% 50%;
+  }
+  
+  .company-stat:nth-child(5) {
+    background-position: 50% 50%;
+  }
+  
+  .company-stat:nth-child(6) {
+    background-position: 100% 50%;
+  } 
+  
+  .stat-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    flex: 1; /* 子要素の高さを親の高さに合わせます */
+    
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 上下に均等なスペースを確保します */
+
+  }
+  
+  .stat-icon fa-icon {
+    max-width: 50px;
+    margin: 20px 0;
+  }
+
+  .stat-icon{
+    margin: 40px 0;
+
+  };
+
+  
+  .stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .stat-value span {
+    font-size: 1.5rem;
+    vertical-align: top;
+  }
+  
