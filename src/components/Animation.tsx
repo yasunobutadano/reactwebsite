@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Container, Row, Col } from 'react-bootstrap';
+import dynamic from 'next/dynamic';
+
+
+// ReactPlayerを動的に読み込む
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 const Animation: React.FC = () => {
   useEffect(() => {
@@ -21,10 +26,11 @@ const Animation: React.FC = () => {
     const jsText = '.js-mv_title-item span';
     const jsLeadText = '.js-mv_title-lead';
     const jsHeader = '.js-header';
+    const jsVideo = '.js-video';
 
     // 初期状態をセット
     gsap.set(
-      [jsBubble, jsText, jsLeadText],
+      [jsBubble, jsText, jsLeadText, jsVideo],
       {
         opacity: 0,
         y: 30
@@ -69,7 +75,7 @@ const Animation: React.FC = () => {
         from: "start",
         ease: "sine.in"
       }
-    }, '+=0.2').to(jsText, {
+    }, '+=0.2').to([jsText, jsVideo], {
       opacity: 1,
       y: 0,
       stagger: {
@@ -84,7 +90,6 @@ const Animation: React.FC = () => {
       opacity: 1,
       y: 0,
     }, '<');
-
   }, []);
 
   return (
@@ -97,10 +102,26 @@ const Animation: React.FC = () => {
         </div>
       </div>
 
-      <header className="js-header">Header</header>
-    　　<h1 className="js-mv_title-item">Creating a mechanism to change the world</h1>
+      <div className="content-wrapper">
+        <div className="align-top text-center ">
+              <header className="js-header">Weocmome to my page!!!!
 
-      <div className="js-mv_title-lead">Your Lead Text Here</div>
+              </header>
+              <h1 className="js-mv_title-item">Creating a mechanism to change the world</h1>
+             <div className="js-mv_title-lead">Your Lead Text Here</div>
+        </div>
+      </div>
+
+      <Row className="">
+          <Col md={4} className="mt-5 pt-5 ">
+            <div className="video-wrapper">
+              <div className="js-video">
+                <ReactPlayer className="react-player rounded-3 " url="https://youtu.be/X9uDppB-ywc?si=PGPgNxsWu3EvY5y6" width="100%" />
+              </div>
+              
+            </div>
+          </Col>
+　　　　</Row>
 
       <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1324 768" className="js-mv-bubble">
         <defs>
@@ -273,7 +294,50 @@ const Animation: React.FC = () => {
         </g>
       </svg>
 
-      
+      <style jsx>{`
+        .content-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  color: black;
+}
+
+.js-mv-bubble {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.js-header,
+.js-mv_title-item,
+.js-mv_title-lead {
+  position: relative;
+  z-index: 2;
+}
+
+.video-wrapper {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px; /* 必要に応じて調整 */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+      `}</style>
     </>
   );
 };

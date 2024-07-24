@@ -2,11 +2,11 @@ body {
     font-family: 'Arial', sans-serif;
   }
   
-  .hero-section {
+  /* .hero-section {
     height: 60vh;
     background: url('/path/to/background-image.jpg') no-repeat center center;
     background-size: cover;
-  }
+  } */
   
   .main-content h1 {
     font-size: 3rem;
@@ -18,11 +18,7 @@ body {
     color: #fff;
   }
 
-  .hero-section {
-    height: 60vh;
-    background: url('/path/to/background-image.jpg') no-repeat center center;
-    background-size: cover;
-  }
+  
   .dow-equal-height {
     display: flex;
     flex-direction: row;
@@ -39,12 +35,16 @@ body {
 
   }
   
-  /* .about-us-section {
-    background-color: #f8f9fa;
-    padding: 40px 0;
+   .about-us-section {
+    margin-top: 300px;
+    padding-top: 240px;
+    padding-bottom: 40px;
     
     
-  } */
+  } 
+  .about-us-part{
+    margin-top: 240px;
+  }
   
   .about-us-card {
     background-color: #343a40;
@@ -278,7 +278,9 @@ body {
   
   .stat-value {
     font-size: 2.5rem;
-    font-weight: bold;
+  font-weight: bold;
+  display: inline-block; /* これを追加してアニメーションの対象にします */
+  transform-origin: center; /* アニメーションの基点を中央に設定します */
   }
   
   .stat-value span {

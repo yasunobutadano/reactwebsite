@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faHandshake } from '@fortawesome/free-regular-svg-icons';
@@ -6,6 +7,8 @@ import { faHandshake } from '@fortawesome/free-solid-svg-icons';
 
 import { faCoffee } from '@fortawesome/free-solid-svg-icons/faCoffee';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { gsap } from 'gsap';
+
 
 
 
@@ -51,12 +54,18 @@ const Company: React.FC = () => {
     },
     {
       title: "Average annual growth rate",
-      value: "140.3",
+      value: "141.3",
       unit: "%",
       icon: icons[2], // Replace with the actual path to the icon
      iconStyle:""
     }
   ];
+  
+
+
+  useEffect(() => {
+    gsap.fromTo(".stat-value", { scale: 0 }, { scale: 1, duration: 1.5, ease: "elastic.out(1, 0.3)" });
+  }, []);
 
 
   return (
